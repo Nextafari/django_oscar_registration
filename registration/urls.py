@@ -1,8 +1,15 @@
-from django.urls import path
+from django.urls import path, include
+from . import views
 
-from oscarapi.app import application as api
 
-urlpatterns = (
+urlpatterns = [
     # all the things you already have
-    path('oscarapi/', api.urls),
-)
+    path("api/", include("oscarapi.urls")),
+    path(
+        'register/', views.UserRegistration.as_view(),
+        name="user_registration"
+    ),
+    path(
+        'users/', views.GetUser.as_view(), name="get_users"
+    ),
+]
