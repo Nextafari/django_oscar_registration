@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # packages
     'rest_framework',
     'oscarapi',
+    'registration',
     # 'oscar.apps.analytics',
     # 'oscar.apps.checkout',
     # 'oscar.apps.address',
