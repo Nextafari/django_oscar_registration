@@ -15,6 +15,7 @@ class UserRegistration(CreateAPIView):
 
             serializer.is_valid(raise_exception=True)
             user = User.objects.create(
+                username=serializer.validated_data.get("username"),
                 first_name=serializer.validated_data.get("first_name"),
                 last_name=serializer.validated_data.get("last_name"),
                 email=serializer.validated_data.get("email")
